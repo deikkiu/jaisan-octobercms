@@ -1,0 +1,61 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "infrastructure"
+postsPerPage = 1
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "home"
+postPage = "home"
+==
+
+{% set posts = blogPosts.posts %}
+
+{% for post in posts %}
+
+<div class="infrastructure__item">
+    <div class="infrastructure__item-info">
+      <div class="subtitle infrastructure__item-subtitle">
+       {{ post.title }}
+      </div>
+      <div class="divider divider_long"></div>
+      <div class="description infrastructure__description">
+        {{ post.excerpt }}
+      </div>
+    </div>
+    <!--  -->
+    <div class="slider">
+      <button class="slider__arrow">
+        <svg
+          width="7"
+          height="12"
+          viewBox="0 0 7 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.86339 1.65016L1.49951 6.01404L5.86339 10.3779"
+            stroke="#151515"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <div class="slider__count">01 <span>/ 06</span></div>
+      <button class="slider__arrow">
+        <svg
+          width="7"
+          height="12"
+          viewBox="0 0 7 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.774552 1.65016L5.13843 6.01404L0.774552 10.3779"
+            stroke="#151515"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+{% endfor %}
